@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 // 環境變數
 const SCRIPT_URL = import.meta.env.VITE_GOOGLE_APP_SCRIPT_URL;
@@ -81,7 +81,7 @@ function App() {
     }
   };
 
-  const handleAnswer = (selectedOption: string) => {
+  const handleAnswer = (_selectedOption: string) => {
     // 這裡原本應該比對答案。但根據需求，題目端不回傳解答。
     // 如果要前端比對，請在 doGet 中保留 answer 欄位，或在送出時批改。
     // 這裡我們暫時模擬如果亂答也可能有分數，或是您必須在取得題目時一併取得解答。
