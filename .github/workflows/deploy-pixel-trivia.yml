@@ -21,6 +21,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./pixel-trivia
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,6 +33,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+          cache-dependency-path: './pixel-trivia/package-lock.json'
 
       - name: Install dependencies
         run: npm ci
@@ -48,7 +52,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: './pixel-trivia/dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
