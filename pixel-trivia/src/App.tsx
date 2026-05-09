@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 // 環境變數
-const SCRIPT_URL = import.meta.env.VITE_GOOGLE_APP_SCRIPT_URL;
+const SCRIPT_URL = import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL || import.meta.env.VITE_GOOGLE_APP_SCRIPT_URL;
 const PASS_THRESHOLD = parseInt(import.meta.env.VITE_PASS_THRESHOLD || '6', 10);
 const QUESTION_COUNT = parseInt(import.meta.env.VITE_QUESTION_COUNT || '10', 10);
 
