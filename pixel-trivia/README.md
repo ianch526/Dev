@@ -23,7 +23,7 @@
 3. **環境變數設定**
    請複製或直接修改專案根目錄的 `.env` 檔案：
    ```env
-   VITE_GOOGLE_APP_SCRIPT_URL=這裡請填寫部署後的_GAS_網址
+   VITE_GOOGLE_APPS_SCRIPT_URL=這裡請填寫部署後的_GAS_網址
    VITE_PASS_THRESHOLD=6
    VITE_QUESTION_COUNT=10
    ```
@@ -58,7 +58,7 @@
    - 執行身分：**「我」**
    - 誰可以存取：**「所有人」** (這非常重要，否則前端會遇到 CORS 錯誤)
 8. 點擊 **「部署」**。首次部署會要求授權，請點選「核准存取權」> 選擇您的 Google 帳號 > 點選「進階」>「前往（不安全）」>「允許」。
-9. 部署完成後，複製畫面上顯示的 **「網頁應用程式網址」**，並貼到專案的 `.env` 檔案中的 `VITE_GOOGLE_APP_SCRIPT_URL` 裡。
+9. 部署完成後，複製畫面上顯示的 **「網頁應用程式網址」**，並貼到專案的 `.env` 檔案中的 `VITE_GOOGLE_APPS_SCRIPT_URL` 裡。
 
 ---
 
@@ -73,9 +73,8 @@
 3. 在左側選單找到 **「Secrets and variables」 > 「Actions」**。
 4. 點擊 **「New repository secret」** 來新增以下環境變數（請參考 `.env.example` 內容）：
    - `VITE_GOOGLE_APPS_SCRIPT_URL`：(必填) 填入你的 GAS 網頁應用程式網址。
-   - `VITE_DICEBEAR_API_URL`：(選填) DiceBear API 網址，可填入預設值 `https://api.dicebear.com/7.x/pixel-art/svg` 或留空。
-   - `VITE_GAME_MAX_QUESTIONS`：(選填) 最大題目數。
-   - `VITE_GAME_TIME_LIMIT_SECONDS`：(選填) 每題時間限制。
+   - `VITE_PASS_THRESHOLD`：(選填) 通關的最低分數門檻（預設為 6）。
+   - `VITE_QUESTION_COUNT`：(選填) 總共的題目數量（預設為 10）。
 5. 前往 **「Settings」 > 「Pages」**。
 6. 在 **「Build and deployment」** 區塊，將 **「Source」** 設定為 **「GitHub Actions」**。
 7. 往後只要推送程式碼到 `main` 分支，GitHub Actions 就會自動建置並部署。部署成功後，即可透過 GitHub Pages 網址遊玩遊戲！
